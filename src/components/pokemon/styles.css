@@ -1,0 +1,15 @@
+.card {
+  border: 1px solid rgb(181 175 175) !important;
+  margin-bottom: 2rem;
+}
+
+.card-name--container {
+  background-color: lightgray;
+  height: 1.6rem;
+}
+
+.card-name {
+  color: #424040;
+  font-weight: 600;
+  text-align: center;
+}
