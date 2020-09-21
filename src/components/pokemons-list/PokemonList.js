@@ -12,7 +12,8 @@ const PokemonList = (props) => {
     
     //pokemons index, we go 20 at the time
     let id = props.pokemons.index
-    let limitIndex = id + 20
+    const maxPokemonsPerPage = 20;
+    let limitIndex = id + maxPokemonsPerPage
 
     //load more pokemons as we scroll down
     const loadMorePokemons = () => {

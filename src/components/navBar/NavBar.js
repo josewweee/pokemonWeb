@@ -7,32 +7,23 @@ const UseNavBar = (props) => {
 
     let inputRef = React.createRef()
 
-    //variable to show or hide the cancel button
-    const [cancelButtonClass, setCancelButtonClass] = useState('query-button hidden')
+    const [cancelButtonVisibility, setCancelButtonVisibility] = useState('query-button hidden')
 
-    //Search in the already fetched pokemons list
-    const handleSearchBar = (e) => {
-        //if we have nothing to search, go back to the pokemon list before query
-        if(e.target.value === '') {
-            //hide the cancel button
-            setCancelButtonClass('query-button hidden')
-            //cancel query
+
+    const handleSearchBar = (event) => {
+        
+        if(event.target.value === '') {
+            setCancelButtonVisibility('query-button hidden')
             props.cancelQuery();
             return
         }
-        //show cancel button
-        setCancelButtonClass('query-button')
-        //query
-        props.query(e.target.value)
+        setCancelButtonVisibility('query-button')
+        props.StartToquery(event.target.value)
     }
 
-    //Go back to the pokemon list before query
-    const cleanQuery = () => {
-        //clear input
+    const cleanQueryAndResetList = () => {
         inputRef.current.value = ''
-        //hide cancel button
-        setCancelButtonClass('query-button hidden')
-        //cancel query
+        setCancelButtonVisibility('query-button hidden')
         props.cancelQuery();
     }
 
@@ -40,14 +31,14 @@ const UseNavBar = (props) => {
     return(
         <div className='navbar-custom'>
             <div className='titles'>
-                <h5 className='main'>PokéApp</h5>
+                <span className='main'>PokéApp</span>
                 <p className='description'>Pokemons</p>
                 <span className='items-section'>Items</span>
 
             </div>
             <div className='query-container'>
                 <input type='text' placeholder='Search' ref={inputRef} className='query-bar' onChange={handleSearchBar}/>
-                <button onClick={cleanQuery} className={cancelButtonClass}>X</button>
+                <button onClick={cleanQueryAndResetList} className={cancelButtonVisibility}>X</button>
             </div>
         </div>
     )
@@ -59,7 +50,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        query: (query) => dispatch(queryPokemons(query)),
+        StartToquery: (query) => dispatch(queryPokemons(query)),
         cancelQuery: () => dispatch(cancelQuery()),
 
     }

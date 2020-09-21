@@ -3,7 +3,6 @@
 .navbar-custom {
   display: flex;
   background-color: var(--light-gray);
-  /* width: 100%; */
   align-items: center;
   position: sticky;
   justify-content: space-between;
@@ -19,6 +18,8 @@
 .titles .main {
   margin-left: 1.5rem;
   margin-bottom: 0rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .titles .description {
