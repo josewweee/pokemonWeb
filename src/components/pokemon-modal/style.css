@@ -71,13 +71,13 @@
   text-transform: uppercase;
 }
 
-.header--texts header-texts--name {
+.header--texts .header-texts--name {
   font-weight: 700;
 }
 
 .header-texts--compare {
   background-color: var(--gray);
-  width: fit-content;
+  width: 100%;
   color: var(--white);
   padding: 0.2rem;
   margin-left: 1rem;
@@ -122,8 +122,10 @@
   margin-bottom: 0.2rem;
 }
 
-.body-text-container--item ul {
-  width: max-content !important;
+/* TRICK: this replaces the width: max-content */
+.body-text-container--item-list {
+  width: auto;
+  white-space: nowrap;
 }
 
 .body-text-container {
@@ -172,7 +174,7 @@
   list-style: none;
 }
 
-.body-comparing--description li {
+.body-comparing-list--item {
   text-align: center;
 }
 

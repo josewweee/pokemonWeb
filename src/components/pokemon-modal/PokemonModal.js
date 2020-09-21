@@ -126,19 +126,23 @@ const ModalBodyPokemon = ({ data }) => (
         <Row className="body-list-items">
           <Col className="body-text-container--item">
             <p className="body-title">Abilities</p>
-            <ul>
-              {data.pokemonData.abilities.map((ability) => (
-                <li key={ability.ability.name}>{ability.ability.name}</li>
-              ))}
-            </ul>
+            <section>
+              <ul className="body-text-container--item-list">
+                {data.pokemonData.abilities.map((ability) => (
+                  <li key={ability.ability.name}>{ability.ability.name}</li>
+                ))}
+              </ul>
+            </section>
           </Col>
           <Col className="body-text-container--item">
             <p className="body-title">Types</p>
-            <ul>
-              {data.pokemonData.types.map((type) => (
-                <li key={type.type.name}>{type.type.name}</li>
-              ))}
-            </ul>
+            <section>
+              <ul className="body-text-container--item-list">
+                {data.pokemonData.types.map((type) => (
+                  <li key={type.type.name}>{type.type.name}</li>
+                ))}
+              </ul>
+            </section>
           </Col>
         </Row>
       </div>
@@ -203,7 +207,9 @@ const ModalBodyComparing = ({ data }) => (
             <Col xs={4} className="body-comparing-list">
               <ul>
                 {data.pokemonData.abilities.map((ability) => (
-                  <li key={ability.ability.name}>{ability.ability.name}</li>
+                  <li className="body-comparing-list--item" key={ability.ability.name}>
+                    {ability.ability.name}
+                  </li>
                 ))}
               </ul>
             </Col>
@@ -213,7 +219,9 @@ const ModalBodyComparing = ({ data }) => (
             <Col xs={4}>
               <ul className="body-comparing-list">
                 {data.comparedPokemon.abilities.map((ability) => (
-                  <li key={ability.ability.name}>{ability.ability.name}</li>
+                  <li className="body-comparing-list--item" key={ability.ability.name}>
+                    {ability.ability.name}
+                  </li>
                 ))}
               </ul>
             </Col>
@@ -241,7 +249,6 @@ const PokemonModal = (props) => {
   } else
     return ReactDOM.createPortal(
       <div className="root-modal">
-        {/* HEADER */}
         <div>
           {!props.modalController.isComparing ? (
             <ModalHeaderPokemon props={props} />
@@ -250,9 +257,7 @@ const PokemonModal = (props) => {
           )}
         </div>
         <hr />
-        {/* END HEADER */}
 
-        {/* BODY */}
         <Row>
           <div className="body">
             {!props.modalController.isComparing ? (
@@ -264,15 +269,12 @@ const PokemonModal = (props) => {
             <hr />
           </div>
         </Row>
-        {/* END BODY */}
 
-        {/* FOOTER */}
         <Row>
           <div className="footer">
             <ModalPokemonFooter data={props.modalController} />
           </div>
         </Row>
-        {/* END FOOTER */}
       </div>,
       document.getElementById("modal-root")
     );
