@@ -1,6 +1,8 @@
+@import "../../colors.css";
+
 .navbar-custom {
   display: flex;
-  background-color: lightgray;
+  background-color: var(--light-gray);
   /* width: 100%; */
   align-items: center;
   position: sticky;
@@ -40,12 +42,12 @@
 .query-bar {
   height: 30px;
   margin: 0.5rem;
-  border: 1px solid #908d8d;
+  border: 1px solid var(--dark-gray);
   border-radius: 6px;
 }
 
 .query-bar:focus {
-  outline: #52b5de solid 2px;
+  outline: var(--light-blue) solid 2px;
 }
 
 .hidden {
@@ -54,7 +56,7 @@
 
 .query-button {
   background: none;
-  color: gray;
+  color: var(--gray);
   border: none;
   position: absolute;
   right: 0;

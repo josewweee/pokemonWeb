@@ -1,3 +1,5 @@
+@import "../../colors.css";
+
 .pokemons-container {
   margin-top: 1rem;
 }
@@ -35,7 +37,7 @@
 
 .card-header--alert span {
   font-weight: 800;
-  color: gray;
+  color: var(--gray);
   font-size: 0.9rem;
 }
 

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {queryPokemons, cancelQuery} from '../../redux/actions/fetchActions'
 
 const UseNavBar = (props) => {
-    //input ref
+
     let inputRef = React.createRef()
 
     //variable to show or hide the cancel button

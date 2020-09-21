@@ -1,3 +1,5 @@
+@import "../../colors.css";
+
 /* MODAL */
 .root-modal {
   margin-left: 5%;
@@ -5,7 +7,7 @@
   height: 97vh;
   width: 90%;
   margin-top: 2vh;
-  background-color: white;
+  background-color: var(--white);
   position: fixed;
   top: 0;
   z-index: 2;
@@ -74,9 +76,9 @@
 }
 
 .header-texts--compare {
-  background-color: gray;
+  background-color: var(--gray);
   width: fit-content;
-  color: white;
+  color: var(--white);
   padding: 0.2rem;
   margin-left: 1rem;
   border-radius: 5px;
@@ -95,7 +97,7 @@
 
 .header--close {
   border: none;
-  color: gray;
+  color: var(--gray);
   font-weight: 900;
   font-size: 1.2rem;
   background: none;
