@@ -1,10 +1,7 @@
 .banner {
   height: 90vh;
   width: 100%;
-  background-image: url("../../resources/banner.jpg");
-  background-origin: border-box;
-  background-size: cover;
-  background-position: center;
+  background: url("../../resources/banner.jpg") center/cover border-box;
 }
 
 .title {
