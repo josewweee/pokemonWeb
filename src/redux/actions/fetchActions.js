@@ -21,8 +21,8 @@ export const fetchPokemons = (id) => async (dispatch) => {
       const speciesData = await speciesRawData.json();
       pokemonReady = individualPokemonData;
       //description
-      let en_text = speciesData.flavor_text_entries.find((item) => item.language.name === "en").flavor_text;
-      pokemonReady.description = en_text;
+      let englishText = speciesData.flavor_text_entries.find((item) => item.language.name === "en").flavor_text;
+      pokemonReady.description = englishText;
       //gender formula according to de api docs
       if (speciesData.gender_rate === -1) pokemonReady.gender = "Genderless";
       else if (speciesData.gender_rate >= 4) pokemonReady.gender = "Female";

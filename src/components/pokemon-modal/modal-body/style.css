@@ -1,0 +1,79 @@
+.body {
+  width: 100%;
+}
+
+.body hr {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+.body-description {
+  margin-right: 1.7rem;
+}
+
+.body-title {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+/* TRICK: this replaces the width: max-content */
+.body-text-container--item-list {
+  width: auto;
+  white-space: nowrap;
+}
+
+.body-text-container {
+  padding-right: 2rem !important;
+}
+
+.body-list-items {
+  flex-wrap: nowrap !important;
+}
+
+.body-text-container--item {
+  flex-grow: 0;
+  padding-left: 0px !important;
+  padding-right: 0 !important;
+}
+
+.body-comparing--img {
+  display: inline-flex;
+  text-align: center;
+  width: 100%;
+}
+
+.body-comparing-texts--container {
+  margin: 0 2rem;
+}
+
+.body-comparing--description {
+  display: flex;
+}
+
+.body-comparing--description ul:first-child {
+  padding-left: 1rem;
+}
+
+.body-comparing--description p {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+}
+
+.body-comparing-list {
+  padding-left: 0 !important;
+}
+
+.body-comparing--description ul {
+  list-style: none;
+}
+
+.body-comparing-list--item {
+  text-align: center;
+}
+
+.body-img {
+  width: 100%;
+  margin-left: 0.8rem;
+}

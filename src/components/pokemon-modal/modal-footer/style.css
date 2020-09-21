@@ -1,0 +1,17 @@
+.footer {
+  width: 100%;
+}
+
+.footer-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.row-footer {
+  justify-content: center;
+}
+
+.stats-chart {
+  position: absolute !important;
+  bottom: 0;
+}
