@@ -73,6 +73,8 @@
 
 .header--texts .header-texts--name {
   font-weight: 700;
+  width: auto;
+  white-space: nowrap;
 }
 
 .header-texts--compare {

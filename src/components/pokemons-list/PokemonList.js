@@ -11,14 +11,10 @@ import "./styles.css";
 const PokemonList = (props) => {
   //pokemons index, we go 20 at the time
   let id = props.pokemons.index;
-  const maxPokemonsPerPage = 20;
-  let limitIndex = id + maxPokemonsPerPage;
 
   //load more pokemons as we scroll down
   const loadMorePokemons = () => {
-    for (let i = id; i < limitIndex; i++) {
-      props.fetch(i);
-    }
+    props.fetch(id);
     props.nextPage();
   };
 

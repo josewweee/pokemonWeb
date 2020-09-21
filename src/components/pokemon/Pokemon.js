@@ -9,8 +9,8 @@ const Pokemon = (props) => {
   };
 
   return (
-    <div className="card" onClick={checkPokemonData}>
-      <img src={props.data.sprites.front_default} alt="imagen pokemon" className="card-img"></img>
+    <div className="custom-card card" onClick={checkPokemonData}>
+      <img src={props.data.sprites.front_default} alt="imagen pokemon" className="card-img" />
       <div className="card-name--container">
         <p className="card-name">{props.data.name}</p>
       </div>

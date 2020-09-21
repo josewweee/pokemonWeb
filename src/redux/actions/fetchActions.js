@@ -1,48 +1,49 @@
-export const FETCH_POSTS_REQUEST = "FETCH_POST_REQUEST";
-export const FETCH_POSTS_SUCCESS = "FETCH_POST_SUCCESS";
-export const FETCH_POSTS_ERROR = "FETCH_POST_ERROR";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_ERROR = "FETCH_ERROR";
 export const QUERY_POKEMONS = "QUERY_POKEMONS";
 export const CANCEL_QUERY = "CANCEL_QUERY";
 export const INCREASE_ID = "INCREASE_ID";
 
 //fetch the pokemons
-export const fetchPokemons = (id) => (dispatch) => {
-  //object to store our new fetchec pokemon
+export const fetchPokemons = (id) => async (dispatch) => {
+  //object to store our new fetched pokemon
   let pokemonReady = {};
-  //fetching the api for the info
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    .then((rawList) => rawList.json())
-    .then((pokemon) => {
-      pokemonReady = pokemon;
-      //in the first fetch we're still missing data, so we do a second fetch to another url
-      fetch(pokemon.species.url)
-        .then((res) => res.json())
-        .then((aditionalData) => {
-          //description
-          let en_text = aditionalData.flavor_text_entries.find((item) => item.language.name === "en").flavor_text;
-          pokemonReady.description = en_text;
-          //gender formula according to de api docs
-          if (aditionalData.gender_rate === -1) pokemonReady.gender = "Genderless";
-          else if (aditionalData.gender_rate >= 4) pokemonReady.gender = "Female";
-          else pokemonReady.gender = "Male";
-          //send it to the reducer
-          dispatch({
-            type: FETCH_POSTS_SUCCESS,
-            payload: {
-              pokemon: pokemonReady,
-            },
-          });
-        });
-    })
-    //errors?
-    .catch((error) => {
+  //initial list
+  try {
+    const rawPokemonsPageList = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${id}`);
+    const jsonPokemonsPageList = await rawPokemonsPageList.json();
+    //each pokemon
+    jsonPokemonsPageList.results.forEach(async (result) => {
+      const rawIndividualPokemonData = await fetch(result.url);
+      const individualPokemonData = await rawIndividualPokemonData.json();
+      //pokemon aditional data
+      const speciesRawData = await fetch(individualPokemonData.species.url);
+      const speciesData = await speciesRawData.json();
+      pokemonReady = individualPokemonData;
+      //description
+      let en_text = speciesData.flavor_text_entries.find((item) => item.language.name === "en").flavor_text;
+      pokemonReady.description = en_text;
+      //gender formula according to de api docs
+      if (speciesData.gender_rate === -1) pokemonReady.gender = "Genderless";
+      else if (speciesData.gender_rate >= 4) pokemonReady.gender = "Female";
+      else pokemonReady.gender = "Male";
+      //send it to the reducer
       dispatch({
-        type: FETCH_POSTS_ERROR,
-        error: error,
+        type: FETCH_SUCCESS,
+        payload: {
+          pokemon: pokemonReady,
+        },
       });
     });
+  } catch (error) {
+    dispatch({
+      type: FETCH_ERROR,
+      error: error,
+    });
+  }
 };
-//increase +20 the pokemons id, thats a next page in the api
+
+//increase +20 to the offset, thats a next page in the api
 export const increasePokemonId = () => {
   return {
     type: INCREASE_ID,

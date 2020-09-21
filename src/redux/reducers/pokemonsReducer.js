@@ -1,23 +1,17 @@
-import {
-  FETCH_POSTS_SUCCESS,
-  FETCH_POSTS_ERROR,
-  QUERY_POKEMONS,
-  CANCEL_QUERY,
-  INCREASE_ID,
-} from "../actions/fetchActions";
+import { FETCH_SUCCESS, FETCH_ERROR, QUERY_POKEMONS, CANCEL_QUERY, INCREASE_ID } from "../actions/fetchActions";
 
 const initialState = {
   pokemons: [],
   queryPokemons: null,
   isFetching: false,
   error: null,
-  index: 1,
+  index: 0,
 };
 
 /* FETCH POKEMONS TO THE API */
 const pokemons = (state = initialState, actions) => {
   switch (actions.type) {
-    case FETCH_POSTS_SUCCESS:
+    case FETCH_SUCCESS:
       return {
         ...state,
         pokemons: [...state.pokemons, actions.payload.pokemon],
@@ -39,7 +33,7 @@ const pokemons = (state = initialState, actions) => {
         pokemons: [...state.pokemons],
         queryPokemons: null,
       };
-    case FETCH_POSTS_ERROR:
+    case FETCH_ERROR:
       return {
         ...state,
         error: actions.error,
