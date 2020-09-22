@@ -4,34 +4,21 @@ export const QUERY_POKEMONS = 'QUERY_POKEMONS';
 export const CANCEL_QUERY = 'CANCEL_QUERY';
 export const INCREASE_ID = 'INCREASE_ID';
 
-//fetch the pokemons
 export const fetchPokemons = (id) => async (dispatch) => {
-  //object to store our new fetched pokemon
-  let pokemonReady = {};
-  //initial list
+  const imageBaseEndPoint = 'https://raw.githubusercontent.com/PokeAPI/sprites/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/';
   try {
     const rawPokemonsPageList = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${id}`);
     const jsonPokemonsPageList = await rawPokemonsPageList.json();
-    //each pokemon
+
     jsonPokemonsPageList.results.forEach(async (result) => {
-      const rawIndividualPokemonData = await fetch(result.url);
-      const individualPokemonData = await rawIndividualPokemonData.json();
-      //pokemon aditional data
-      const speciesRawData = await fetch(individualPokemonData.species.url);
-      const speciesData = await speciesRawData.json();
-      pokemonReady = individualPokemonData;
-      //description
-      let englishText = speciesData.flavor_text_entries.find((item) => item.language.name === 'en').flavor_text;
-      pokemonReady.description = englishText;
-      //gender formula according to de api docs
-      if (speciesData.gender_rate === -1) {
-        pokemonReady.gender = 'Genderless';
-      } else if (speciesData.gender_rate >= 4) {
-        pokemonReady.gender = 'Female';
-      } else {
-        pokemonReady.gender = 'Male';
-      }
-      //send it to the reducer
+      id = id + 1;
+      const rawPokemonImage = await fetch(`${imageBaseEndPoint}${id}.png`);
+      const pokemonImage = await rawPokemonImage.blob();
+      const pokemonReady = {
+        name: result.name,
+        image: URL.createObjectURL(pokemonImage),
+        url: result.url,
+      };
       dispatch({
         type: FETCH_SUCCESS,
         payload: {

@@ -55,8 +55,8 @@ const PokemonList = (props) => {
             threshold={20}
           >
             <Row>
-              {props.pokemons.pokemons.map((pokemon) => (
-                <Col xs={6} sm={3} md={3} lg={2} key={pokemon.id}>
+              {props.pokemons.pokemons.map((pokemon, index) => (
+                <Col xs={6} sm={3} md={3} lg={2} key={index}>
                   <Pokemon data={pokemon} />
                 </Col>
               ))}
