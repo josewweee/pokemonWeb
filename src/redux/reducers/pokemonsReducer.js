@@ -1,4 +1,4 @@
-import { FETCH_SUCCESS, FETCH_ERROR, QUERY_POKEMONS, CANCEL_QUERY, INCREASE_ID } from "../actions/fetchActions";
+import { FETCH_SUCCESS, FETCH_ERROR, QUERY_POKEMONS, CANCEL_QUERY, INCREASE_ID } from '../actions/fetchActions';
 
 const initialState = {
   pokemons: [],

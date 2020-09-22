@@ -1,7 +1,7 @@
-import React from "react";
-import "./styles.css";
-import { connect } from "react-redux";
-import { openModal } from "../../redux/actions/modalActions";
+import React from 'react';
+import './styles.css';
+import { connect } from 'react-redux';
+import { openModal } from '../../redux/actions/modalActions';
 
 const Pokemon = (props) => {
   const checkPokemonData = () => {

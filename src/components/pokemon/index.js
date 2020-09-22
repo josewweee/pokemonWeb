@@ -1,1 +1,1 @@
-export {default} from './Pokemon.js'
+export { default } from './Pokemon.js';

@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, COMPARE } from "../actions/modalActions";
+import { OPEN_MODAL, CLOSE_MODAL, COMPARE } from '../actions/modalActions';
 
 const initialState = {
   modalVisible: false,

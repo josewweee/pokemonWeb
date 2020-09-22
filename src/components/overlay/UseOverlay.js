@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import "./styles.css";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import './styles.css';
+import { connect } from 'react-redux';
 
 const UseOverlay = (props) => {
-  const [overlayState, setOverlayState] = useState("hidden");
+  const [overlayState, setOverlayState] = useState('hidden');
 
   useEffect(() => {
     if (props.modalController.modalVisible) {
-      setOverlayState("open");
+      setOverlayState('open');
     } else {
-      setOverlayState("hidden");
+      setOverlayState('hidden');
     }
 
     return () => {};

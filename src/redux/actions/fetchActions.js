@@ -1,8 +1,8 @@
-export const FETCH_SUCCESS = "FETCH_SUCCESS";
-export const FETCH_ERROR = "FETCH_ERROR";
-export const QUERY_POKEMONS = "QUERY_POKEMONS";
-export const CANCEL_QUERY = "CANCEL_QUERY";
-export const INCREASE_ID = "INCREASE_ID";
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_ERROR = 'FETCH_ERROR';
+export const QUERY_POKEMONS = 'QUERY_POKEMONS';
+export const CANCEL_QUERY = 'CANCEL_QUERY';
+export const INCREASE_ID = 'INCREASE_ID';
 
 //fetch the pokemons
 export const fetchPokemons = (id) => async (dispatch) => {
@@ -21,12 +21,12 @@ export const fetchPokemons = (id) => async (dispatch) => {
       const speciesData = await speciesRawData.json();
       pokemonReady = individualPokemonData;
       //description
-      let englishText = speciesData.flavor_text_entries.find((item) => item.language.name === "en").flavor_text;
+      let englishText = speciesData.flavor_text_entries.find((item) => item.language.name === 'en').flavor_text;
       pokemonReady.description = englishText;
       //gender formula according to de api docs
-      if (speciesData.gender_rate === -1) pokemonReady.gender = "Genderless";
-      else if (speciesData.gender_rate >= 4) pokemonReady.gender = "Female";
-      else pokemonReady.gender = "Male";
+      if (speciesData.gender_rate === -1) pokemonReady.gender = 'Genderless';
+      else if (speciesData.gender_rate >= 4) pokemonReady.gender = 'Female';
+      else pokemonReady.gender = 'Male';
       //send it to the reducer
       dispatch({
         type: FETCH_SUCCESS,

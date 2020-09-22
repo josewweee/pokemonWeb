@@ -1,1 +1,1 @@
-export {default} from './UseOverlay.js'
+export { default } from './UseOverlay.js';

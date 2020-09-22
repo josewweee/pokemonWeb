@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { connect } from "react-redux";
-import { Row } from "react-bootstrap";
-import { ModalBodyPokemon, ModalBodyComparing } from "./modal-body/ModalBody";
-import ModalFooter from "./modal-footer";
-import ModalHeader from "./modal-header";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { Row } from 'react-bootstrap';
+import { ModalBodyPokemon, ModalBodyComparing } from './modal-body/ModalBody';
+import ModalFooter from './modal-footer';
+import ModalHeader from './modal-header';
 
-import "./style.css";
+import './style.css';
 
 const PokemonModal = (props) => {
   if (!props.modalController.modalVisible) {
@@ -19,11 +19,7 @@ const PokemonModal = (props) => {
 
         <Row>
           <div className="body">
-            {!props.modalController.isComparing ? (
-              <ModalBodyPokemon data={props.modalController} />
-            ) : (
-              <ModalBodyComparing data={props.modalController} />
-            )}
+            {!props.modalController.isComparing ? <ModalBodyPokemon data={props.modalController} /> : <ModalBodyComparing data={props.modalController} />}
 
             <hr />
           </div>
@@ -35,7 +31,7 @@ const PokemonModal = (props) => {
           </div>
         </Row>
       </div>,
-      document.getElementById("modal-root")
+      document.getElementById('modal-root')
     );
 };
 

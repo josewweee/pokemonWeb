@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import "./styles.css";
-import { connect } from "react-redux";
-import { queryPokemons, cancelQuery } from "../../redux/actions/fetchActions";
+import React, { useState } from 'react';
+import './styles.css';
+import { connect } from 'react-redux';
+import { queryPokemons, cancelQuery } from '../../redux/actions/fetchActions';
 
 const UseNavBar = (props) => {
   let inputRef = React.createRef();
 
-  const [cancelButtonVisibility, setCancelButtonVisibility] = useState("query-button hidden");
+  const [cancelButtonVisibility, setCancelButtonVisibility] = useState('query-button hidden');
 
   const handleSearchBar = (event) => {
-    if (event.target.value === "") {
-      setCancelButtonVisibility("query-button hidden");
+    if (event.target.value === '') {
+      setCancelButtonVisibility('query-button hidden');
       props.cancelQuery();
       return;
     }
-    setCancelButtonVisibility("query-button");
+    setCancelButtonVisibility('query-button');
     props.StartToquery(event.target.value);
   };
 
   const cleanQueryAndResetList = () => {
-    inputRef.current.value = "";
-    setCancelButtonVisibility("query-button hidden");
+    inputRef.current.value = '';
+    setCancelButtonVisibility('query-button hidden');
     props.cancelQuery();
   };
 

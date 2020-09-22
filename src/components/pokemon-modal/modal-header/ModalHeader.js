@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { closeModal, compare } from "../../../redux/actions/modalActions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { closeModal, compare } from '../../../redux/actions/modalActions';
 
-import "./style.css";
+import './style.css';
 
 const ModalHeaderPokemon = ({ props }) => {
   const data = props.modalController;
@@ -51,11 +51,7 @@ const ModalHeaderComparing = ({ props }) => {
   );
 };
 
-const ModalHeader = (props) => (
-  <div>
-    {!props.modalController.isComparing ? <ModalHeaderPokemon props={props} /> : <ModalHeaderComparing props={props} />}
-  </div>
-);
+const ModalHeader = (props) => <div>{!props.modalController.isComparing ? <ModalHeaderPokemon props={props} /> : <ModalHeaderComparing props={props} />}</div>;
 
 const mapStateToProps = (state) => {
   return state;

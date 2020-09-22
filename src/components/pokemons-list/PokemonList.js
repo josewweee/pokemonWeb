@@ -1,11 +1,11 @@
-import React from "react";
-import Pokemon from "../pokemon/Pokemon";
-import { connect } from "react-redux";
-import { fetchPokemons, increasePokemonId } from "../../redux/actions/fetchActions";
-import Col from "react-bootstrap/col";
-import { Row, Container } from "react-bootstrap";
-import InfiniteScroll from "react-infinite-scroller";
-import "./styles.css";
+import React from 'react';
+import Pokemon from '../pokemon/Pokemon';
+import { connect } from 'react-redux';
+import { fetchPokemons, increasePokemonId } from '../../redux/actions/fetchActions';
+import Col from 'react-bootstrap/col';
+import { Row, Container } from 'react-bootstrap';
+import InfiniteScroll from 'react-infinite-scroller';
+import './styles.css';
 
 //Pokemons lists
 const PokemonList = (props) => {
@@ -19,7 +19,7 @@ const PokemonList = (props) => {
   };
 
   //showing the comparing card alert if we are comparing
-  let cardAlertDisplay = props.modalController.isComparing ? "" : "hidden";
+  let cardAlertDisplay = props.modalController.isComparing ? '' : 'hidden';
 
   return (
     <div>

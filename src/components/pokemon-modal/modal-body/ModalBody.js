@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Col from "react-bootstrap/col";
-import { Row } from "react-bootstrap";
+import Col from 'react-bootstrap/col';
+import { Row } from 'react-bootstrap';
 
-import "./style.css";
+import './style.css';
 
 export const ModalBodyPokemon = ({ data }) => (
   <Row>
