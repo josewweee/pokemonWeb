@@ -4,5 +4,8 @@
   --light-gray: #d3d3d3;
   --dark-gray: #908d8d;
   --light-black: #424040;
+  --hover-black: rgb(92, 92, 92);
+  --dark-transparent-low-black: rgba(0, 0, 0, 0.125);
+  --dark-transparent-high-black: #0000008c;
   --light-blue: #52b5de;
 }

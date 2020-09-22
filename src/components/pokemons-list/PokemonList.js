@@ -7,23 +7,18 @@ import { Row, Container } from 'react-bootstrap';
 import InfiniteScroll from 'react-infinite-scroller';
 import './styles.css';
 
-//Pokemons lists
 const PokemonList = (props) => {
-  //pokemons index, we go 20 at the time
-  let id = props.pokemons.index;
+  let pokemonActualIndex = props.pokemons.index;
 
-  //load more pokemons as we scroll down
   const loadMorePokemons = () => {
-    props.fetch(id);
+    props.fetch(pokemonActualIndex);
     props.nextPage();
   };
 
-  //showing the comparing card alert if we are comparing
   let cardAlertDisplay = props.modalController.isComparing ? '' : 'hidden';
 
   return (
-    <div>
-      {/* Check if we are comparing to render */}
+    <div className="pokemons-list">
       {props.modalController.isComparing && (
         <div className={`card-alert-container ${cardAlertDisplay}`}>
           <div className="card">
@@ -39,7 +34,6 @@ const PokemonList = (props) => {
         </div>
       )}
       <Container className="pokemons-container">
-        {/* POKEMONS IF IN A QUERY */}
         {props.pokemons.queryPokemons !== null ? (
           <Row>
             {props.pokemons.queryPokemons.map((pokemon) => (
@@ -49,8 +43,6 @@ const PokemonList = (props) => {
             ))}
           </Row>
         ) : (
-          /* POKEMONS IF NOT IN A QUERY */
-          /* infinite scroll to keep searching */
           <InfiniteScroll
             loadMore={loadMorePokemons}
             hasMore={true || false}

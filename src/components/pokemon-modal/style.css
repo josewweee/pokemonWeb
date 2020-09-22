@@ -1,6 +1,5 @@
-@import "../../colors.css";
+@import '../../colors.css';
 
-/* MODAL */
 .root-modal {
   margin-left: 5%;
   margin-right: 5%;
@@ -14,8 +13,14 @@
   border-radius: 10px;
 }
 
-.root-modal hr {
+.root-modal .separator {
   border-top: 1px solid rgb(0 0 0 / 28%);
+}
+.root-modal .separator-sm {
+  width: 90%;
+}
+
+.root-modal .separator-lg {
   width: 100%;
 }
 

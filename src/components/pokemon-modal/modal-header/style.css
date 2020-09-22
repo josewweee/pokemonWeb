@@ -1,4 +1,4 @@
-@import "../../../colors.css";
+@import '../../../colors.css';
 
 .header {
   display: inline-flex;
@@ -37,7 +37,7 @@
 }
 
 .header-texts--compare:hover {
-  background-color: rgb(92, 92, 92);
+  background-color: var(--hover-black);
 }
 
 .header-texts--compare:focus,

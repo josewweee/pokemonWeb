@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import PokemonModal from './components/pokemon-modal/PokemonModal';
 import UseOverlay from './components/overlay';
 
-/* MAIN APP */
 function App() {
   return (
     <Provider store={store}>

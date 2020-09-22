@@ -1,0 +1,40 @@
+.body {
+  width: 100%;
+}
+
+.body-img {
+  width: 100%;
+  margin-left: 0.8rem;
+}
+
+.body .body-separator {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
+
+.body-description {
+  margin-right: 1.7rem;
+}
+
+.body-title {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.body-text-container--item-list {
+  width: auto;
+  white-space: nowrap;
+}
+
+.row-container .body-text-container {
+  padding-right: 2rem;
+}
+
+.body-text-container .body-list-items {
+  flex-wrap: nowrap;
+}
+
+.body-text-container .body-text-container--item {
+  padding-left: 0;
+  padding-right: 0;
+}

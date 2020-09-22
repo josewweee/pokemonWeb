@@ -1,4 +1,4 @@
-@import "../../colors.css";
+@import '../../colors.css';
 
 .pokemons-container {
   margin-top: 1rem;
@@ -23,7 +23,7 @@
 }
 
 .card-alert-container .card {
-  box-shadow: 2px 1px 10px #0000008c;
+  box-shadow: 2px 1px 10px var(--dark-transparent-high-black);
 }
 
 .card-alert-container .card div {
@@ -32,7 +32,7 @@
 }
 
 .card-header--alert {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid var(--dark-transparent-low-black);
 }
 
 .card-header--alert span {
@@ -42,7 +42,7 @@
 }
 
 .card-body--alert {
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 1px solid var(--dark-transparent-low-black);
 }
 
 .card-body--alert span {
@@ -50,20 +50,20 @@
 }
 
 @media (min-width: 992px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 792px !important;
+  .pokemons-list .container,
+  .pokemons-list .container-lg,
+  .pokemons-list .container-md,
+  .pokemons-list .container-sm {
+    max-width: 792px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1000px !important;
+  .pokemons-list .container,
+  .pokemons-list .container-lg,
+  .pokemons-list .container-md,
+  .pokemons-list .container-sm,
+  .pokemons-list .container-xl {
+    max-width: 1000px;
   }
 }

@@ -1,0 +1,41 @@
+.body-title {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.body-comparing--img {
+  display: inline-flex;
+  text-align: center;
+  width: 100%;
+}
+
+.body-comparing-texts--container {
+  margin: 0 2rem;
+}
+
+.body-comparing--description {
+  display: flex;
+}
+
+.body-comparing--description ul:first-child {
+  padding-left: 1rem;
+}
+
+.body-comparing--description .body-data,
+.body-comparing--description .body-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+}
+
+.container-padding-left-0 {
+  padding-left: 0 !important;
+}
+
+.body-comparing--description .body-comparing-list {
+  list-style: none;
+}
+
+.body-comparing-list--item {
+  text-align: center;
+}

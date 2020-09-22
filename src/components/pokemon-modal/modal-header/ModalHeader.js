@@ -11,7 +11,6 @@ const ModalHeaderPokemon = ({ props }) => {
     props.closeModal();
   };
 
-  //Closing the modal and setting a compare variable in the store
   const handleCompare = () => {
     props.comparePokemons();
   };
