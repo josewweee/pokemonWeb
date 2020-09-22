@@ -15,24 +15,20 @@ const PokemonList = (props) => {
     props.nextPage();
   };
 
-  let cardAlertDisplay = props.modalController.isComparing ? '' : 'hidden';
-
   return (
     <div className="pokemons-list">
-      {props.modalController.isComparing && (
-        <div className={`card-alert-container ${cardAlertDisplay}`}>
-          <div className="card">
-            <div className="card-header--alert">
-              <span>Comparing pokemon</span>
-            </div>
-            <div className="card-body--alert">
-              <strong>
-                <span>{props.modalController.pokemonData.name}</span>
-              </strong>
-            </div>
+      <div className={`card-alert-container`} style={props.modalController.isComparing ? { opacity: 1 } : { opacity: 0 }}>
+        <div className="card">
+          <div className="card-header--alert">
+            <span>Comparing pokemon</span>
+          </div>
+          <div className="card-body--alert">
+            <strong>
+              <span>{props.modalController.pokemonData && props.modalController.pokemonData.name}</span>
+            </strong>
           </div>
         </div>
-      )}
+      </div>
       <Container className="pokemons-container">
         {props.pokemons.queryPokemons !== null ? (
           <Row>

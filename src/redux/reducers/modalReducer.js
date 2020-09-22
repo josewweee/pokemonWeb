@@ -20,7 +20,6 @@ function modalController(state = initialState, actions) {
       return {
         ...state,
         modalVisible: false,
-        pokemonData: null,
         comparedPokemon: null,
         isComparing: false,
       };
