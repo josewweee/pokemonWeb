@@ -6,6 +6,7 @@ import ModalBodyComparing from './modal-body/modal-body-comparing';
 import ModalBodyPokemon from './modal-body/modal-body-pokemon';
 import ModalFooter from './modal-footer';
 import ModalHeader from './modal-header';
+import ModalBody from './modal-body';
 
 import './style.css';
 
@@ -20,8 +21,7 @@ const PokemonModal = (props) => {
 
         <Row>
           <div className="body">
-            {!props.modalController.isComparing ? <ModalBodyPokemon data={props.modalController} /> : <ModalBodyComparing data={props.modalController} />}
-
+            <ModalBody />
             <hr className="separator separator-sm" />
           </div>
         </Row>
