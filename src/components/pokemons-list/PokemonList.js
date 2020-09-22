@@ -32,8 +32,8 @@ const PokemonList = (props) => {
       <Container className="pokemons-container">
         {props.pokemons.queryPokemons !== null ? (
           <Row>
-            {props.pokemons.queryPokemons.map((pokemon) => (
-              <Col xs={6} sm={3} md={3} lg={3} key={pokemon.id}>
+            {props.pokemons.queryPokemons.map((pokemon, index) => (
+              <Col xs={6} sm={3} md={3} lg={3} key={index}>
                 <Pokemon data={pokemon} />
               </Col>
             ))}
