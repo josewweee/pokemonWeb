@@ -17,7 +17,7 @@ const PokemonList = (props) => {
 
   return (
     <div className="pokemons-list">
-      <div className={`card-alert-container`} style={props.modalController.isComparing ? { opacity: 1 } : { opacity: 0 }}>
+      <div className={props.modalController.isComparing ? 'card-alert-container' : 'hiden'}>
         <div className="card">
           <div className="card-header--alert">
             <span>Comparing pokemon</span>

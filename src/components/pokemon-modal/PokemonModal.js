@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Row } from 'react-bootstrap';
@@ -9,26 +9,12 @@ import ModalHeader from './modal-header';
 
 import './style.css';
 
-const UsePokemonModal = (props) => {
-  const [modalOpacity, setModalOpacity] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (modalOpacity === false) {
-        setModalOpacity(true);
-      } else {
-        setModalOpacity(false);
-      }
-    }, 100);
-
-    return () => {};
-  }, [props.modalController.modalVisible]);
-
+const PokemonModal = (props) => {
   if (!props.modalController.modalVisible) {
     return null;
   } else
     return ReactDOM.createPortal(
-      <div className="root-modal" style={!modalOpacity ? { opacity: 1 } : { opacity: 0 }}>
+      <div className="root-modal">
         <ModalHeader />
         <hr className="separator separator-lg" />
 
@@ -54,4 +40,4 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps)(UsePokemonModal);
+export default connect(mapStateToProps)(PokemonModal);
