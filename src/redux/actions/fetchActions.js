@@ -24,9 +24,13 @@ export const fetchPokemons = (id) => async (dispatch) => {
       let englishText = speciesData.flavor_text_entries.find((item) => item.language.name === 'en').flavor_text;
       pokemonReady.description = englishText;
       //gender formula according to de api docs
-      if (speciesData.gender_rate === -1) pokemonReady.gender = 'Genderless';
-      else if (speciesData.gender_rate >= 4) pokemonReady.gender = 'Female';
-      else pokemonReady.gender = 'Male';
+      if (speciesData.gender_rate === -1) {
+        pokemonReady.gender = 'Genderless';
+      } else if (speciesData.gender_rate >= 4) {
+        pokemonReady.gender = 'Female';
+      } else {
+        pokemonReady.gender = 'Male';
+      }
       //send it to the reducer
       dispatch({
         type: FETCH_SUCCESS,
