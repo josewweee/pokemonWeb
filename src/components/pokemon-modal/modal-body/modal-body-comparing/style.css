@@ -28,8 +28,8 @@
   font-size: 0.9em;
 }
 
-.container-padding-left-0 {
-  padding-left: 0 !important;
+.body-comparing-texts--container .body-comparing--description .container-padding-left-0 {
+  padding-left: 0;
 }
 
 .body-comparing--description .body-comparing-list {
