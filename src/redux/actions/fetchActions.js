@@ -34,14 +34,12 @@ export const fetchPokemons = (id) => async (dispatch) => {
   }
 };
 
-//increase +20 to the offset, thats a next page in the api
 export const increasePokemonId = () => {
   return {
     type: INCREASE_ID,
   };
 };
 
-//search pokemons in the already loaded ones
 export const queryPokemons = (query) => {
   return {
     type: QUERY_POKEMONS,
@@ -51,7 +49,6 @@ export const queryPokemons = (query) => {
   };
 };
 
-//go back to the old state (loaded pokemons)
 export const cancelQuery = () => {
   return {
     type: CANCEL_QUERY,

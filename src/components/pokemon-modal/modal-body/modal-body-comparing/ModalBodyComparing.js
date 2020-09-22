@@ -36,7 +36,7 @@ const ModalBodyComparing = ({ data }) => (
           <StatsComparatingComponent data={data} stat={'height'} measure={'m'} />
           <StatsComparatingComponent data={data} stat={'weight'} measure={'kg'} />
           <StatsComparatingComponent data={data} stat={'gender'} measure={''} />
-          {/* ABILITIES */}
+
           <div className="body-comparing--description">
             <Col xs={4} className="container-padding-left-0">
               <ul className="body-comparing-list">

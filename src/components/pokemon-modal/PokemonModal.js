@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Row } from 'react-bootstrap';
-// import { ModalBodyPokemon, ModalBodyComparing } from './modal-body/ModalBody';
 import ModalBodyComparing from './modal-body/modal-body-comparing';
 import ModalBodyPokemon from './modal-body/modal-body-pokemon';
 import ModalFooter from './modal-footer';

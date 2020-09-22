@@ -8,7 +8,6 @@ const initialState = {
   index: 0,
 };
 
-/* FETCH POKEMONS TO THE API */
 const pokemons = (state = initialState, actions) => {
   switch (actions.type) {
     case FETCH_SUCCESS:

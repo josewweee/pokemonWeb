@@ -6,7 +6,7 @@ const initialState = {
   isComparing: false,
   comparedPokemon: null,
 };
-/* OPEN AND CLOSE THE MODAL, SENDING POKEMON DATA DEPENDING OF WHICH ONE WAS SELECTED */
+
 function modalController(state = initialState, actions) {
   switch (actions.type) {
     case OPEN_MODAL:
