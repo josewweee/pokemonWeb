@@ -1,0 +1,68 @@
+@import '../../colors.css';
+
+.root-modal {
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 97vh;
+  width: 90%;
+  margin-top: 2vh;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  border-radius: 10px;
+  animation-name: open;
+  animation-duration: 2s;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.root-modal .separator {
+  border-top: 1px solid rgb(0 0 0 / 28%);
+}
+.root-modal .separator-sm {
+  width: 90%;
+}
+
+.root-modal .separator-lg {
+  width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+  .root-modal {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .root-modal {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .root-modal {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+}
+
+@media only screen and (min-height: 720px) {
+  .root-modal {
+    height: 85vh;
+    margin-top: 8vh;
+    max-height: 650px;
+  }
+}

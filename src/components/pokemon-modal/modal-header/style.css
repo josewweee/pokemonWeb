@@ -1,0 +1,54 @@
+@import '../../../colors.css';
+
+.header {
+  display: inline-flex;
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: flex-start;
+}
+
+.header--texts {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.header-texts--name {
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.header--texts .header-texts--name {
+  font-weight: 700;
+  width: auto;
+  white-space: nowrap;
+}
+
+.header-texts--compare {
+  background-color: var(--gray);
+  width: 100%;
+  color: var(--white);
+  padding: 0.2rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  border: none;
+}
+
+.header-texts--compare:hover {
+  background-color: var(--hover-black);
+}
+
+.header-texts--compare:focus,
+.header-texts--compare:active {
+  outline: none;
+}
+
+.header--close {
+  border: none;
+  color: var(--gray);
+  font-weight: 900;
+  font-size: 1.2rem;
+  background: none;
+}

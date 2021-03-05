@@ -1,0 +1,17 @@
+@import "../../colors.css";
+
+.custom-card.card {
+  border: 1px solid rgb(181 175 175);
+  margin-bottom: 2rem;
+}
+
+.card-name--container {
+  background-color: var(--light-gray);
+  height: 1.6rem;
+}
+
+.card-name {
+  color: var(--light-black);
+  font-weight: 600;
+  text-align: center;
+}

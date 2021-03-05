@@ -1,0 +1,14 @@
+@import "../../colors.css";
+
+.banner {
+  height: 90vh;
+  width: 100%;
+  background: url("../../resources/banner.jpg") center/cover border-box;
+}
+
+.title {
+  color: var(--white);
+  text-align: center;
+  margin: auto;
+  padding-top: 50vh;
+}
